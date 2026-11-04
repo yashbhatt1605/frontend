@@ -1,15 +1,17 @@
-import API from "./api";
+import axios from "axios";
+
+const MOCKAPI_URL =
+    "https://6a6199ceda10c59c1809a1eb.mockapi.io/cardetaild/cardetails";
 
 const carService = {
-    getAll: () => API.get("/cars"),
+    getAll: () => axios.get(MOCKAPI_URL),
 
-    getById: (id) => API.get(`/cars/${id}`),
+    getById: (id) => axios.get(`${MOCKAPI_URL}/${id}`),
 
-    create: (data) => API.post("/cars", data),
+    create: (data) => axios.post(MOCKAPI_URL, data),
 
     update: (id, data) =>
-        API.put(`/cars/${id}`, data),
-
+        axios.put(`${MOCKAPI_URL}/${id}`, data),
 };
 
 export default carService;
