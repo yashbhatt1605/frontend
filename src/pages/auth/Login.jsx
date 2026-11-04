@@ -1,10 +1,7 @@
-
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const API_URL = (
-  process.env.REACT_APP_API_URL || "http://localhost:5000"
-).replace(/\/$/, "");
+const API_URL = "https://backend-i3ao.onrender.com";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,7 +19,9 @@ const Login = () => {
     try {
       const response = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           email: email.trim().toLowerCase(),
           password,
@@ -35,7 +34,6 @@ const Login = () => {
         throw new Error(data.message || "Invalid email or password.");
       }
 
-      // Save the session only after backend authentication succeeds.
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
       localStorage.setItem("role", data.user.role || "user");

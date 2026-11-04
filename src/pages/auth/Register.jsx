@@ -1,11 +1,8 @@
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../Styles/auth.css";
 
-const API_URL = (
-  process.env.REACT_APP_API_URL || "http://localhost:5000"
-).replace(/\/$/, "");
+const API_URL = "https://backend-i3ao.onrender.com";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -57,8 +54,15 @@ const Register = () => {
     try {
       const response = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          password,
+        }),
       });
 
       const data = await response.json().catch(() => ({}));
@@ -67,7 +71,6 @@ const Register = () => {
         throw new Error(data.message || "Registration failed.");
       }
 
-      // Registration must be confirmed by the backend.
       alert("Registration successful! Please log in.");
       navigate("/login", { replace: true });
     } catch (err) {
