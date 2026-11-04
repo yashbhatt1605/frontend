@@ -1,0 +1,89 @@
+/* Lightweight motion only. Avoid continuous floating and large transforms. */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 180ms ease-out both;
+}
+
+.slide-up,
+.slide-left,
+.slide-right,
+.zoom-in {
+    animation: fadeIn 180ms ease-out both;
+}
+
+.floating {
+    animation: none !important;
+}
+
+.pulse:hover,
+.rotate:hover {
+    animation: none;
+    transform: none;
+}
+
+.hover-card {
+    transition: box-shadow 160ms ease;
+}
+
+.hover-card:hover {
+    transform: none;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.hover-btn {
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.hover-btn:hover {
+    transform: none;
+}
+
+.loader {
+    width: 36px;
+    height: 36px;
+    border: 4px solid #e5e7eb;
+    border-top-color: #6b7280;
+    border-radius: 50%;
+    animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.image-hover {
+    overflow: hidden;
+}
+
+.image-hover img {
+    transition: transform 180ms ease;
+}
+
+.image-hover:hover img {
+    transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loader {
+        animation-duration: 1.5s;
+    }
+
+    .fade-in,
+    .slide-up,
+    .slide-left,
+    .slide-right,
+    .zoom-in,
+    .floating,
+    .pulse,
+    .hover-card,
+    .hover-btn,
+    .image-hover img {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}

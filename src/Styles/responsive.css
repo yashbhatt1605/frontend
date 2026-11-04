@@ -1,0 +1,346 @@
+/* ==========================================
+   EXTRA LARGE DEVICES (1400px)
+========================================== */
+
+@media (max-width: 1400px) {
+
+    .container,
+    .navbar-container,
+    .hero-container,
+    .footer-container,
+    .about-container,
+    .contact-container {
+        width: 95%;
+    }
+
+}
+
+/* ==========================================
+   LARGE DEVICES (1200px)
+========================================== */
+
+@media (max-width:1200px) {
+
+    .hero-container,
+    .about-container,
+    .dashboard-grid,
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .stats-grid,
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ==========================================
+   TABLETS (992px)
+========================================== */
+
+@media(max-width:992px) {
+
+    .sidebar {
+        left: -270px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .navbar-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+
+}
+
+/* ==========================================
+   MOBILE (768px)
+========================================== */
+
+@media(max-width:768px) {
+
+    .stats-grid,
+    .stats-container,
+    .vehicle-grid,
+    .brand-grid,
+    .category-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero {
+
+        padding: 80px 20px;
+        text-align: center;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 42px;
+
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .wishlist-card,
+    .cart-item {
+
+        flex-direction: column;
+
+    }
+
+    .checkout-grid,
+    .contact-container,
+    .about-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .orders-table {
+
+        display: block;
+        overflow-x: auto;
+
+    }
+
+    .admin-search {
+
+        width: 100%;
+
+    }
+
+    .search-box {
+
+        flex-direction: column;
+
+    }
+
+    .newsletter-form {
+
+        flex-direction: column;
+
+    }
+
+    .social-login {
+
+        flex-direction: column;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE (576px)
+========================================== */
+
+@media(max-width:576px) {
+
+    .dashboard,
+    .container {
+
+        padding: 20px;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 32px;
+
+    }
+
+    .hero-content p {
+
+        font-size: 16px;
+
+    }
+
+    .title {
+
+        font-size: 28px;
+
+    }
+
+    .section-title h2 {
+
+        font-size: 28px;
+
+    }
+
+    .topbar-left h2 {
+
+        font-size: 24px;
+
+    }
+
+    .auth-card {
+
+        padding: 20px;
+
+    }
+
+    .modal {
+
+        width: 95%;
+        padding: 20px;
+
+    }
+
+    .vehicle-card img {
+
+        height: 180px;
+
+    }
+
+    .stat-card h2 {
+
+        font-size: 28px;
+
+    }
+
+    .btn,
+    .admin-btn,
+    .auth-btn {
+
+        width: 100%;
+
+    }
+
+}
+
+/* ==========================================
+   EXTRA SMALL DEVICES (400px)
+========================================== */
+
+@media(max-width:400px) {
+
+    .logo {
+
+        font-size: 24px;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 28px;
+
+    }
+
+    .hero-buttons {
+
+        gap: 10px;
+
+    }
+
+    .hero-btn {
+
+        width: 100%;
+
+    }
+
+    .otp-container {
+
+        gap: 8px;
+
+    }
+
+    .otp-container input {
+
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+
+    }
+
+    .nav-links {
+
+        gap: 15px;
+
+    }
+
+}
+
+/* ==========================================
+   LANDSCAPE MOBILE
+========================================== */
+
+@media (max-height:500px) {
+
+    .hero {
+
+        min-height: auto;
+        padding: 60px 20px;
+
+    }
+
+}
+
+/* ==========================================
+   PRINT
+========================================== */
+
+@media print {
+
+    .sidebar,
+    .topbar,
+    .navbar,
+    .footer,
+    .menu-toggle,
+    button {
+
+        display: none !important;
+
+    }
+
+    body {
+
+        background: white;
+
+    }
+
+}
